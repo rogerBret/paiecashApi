@@ -16,7 +16,8 @@ class TestQrcodeController extends Controller
      */
     public function index()
     {
-        //
+        $info = Qrcodes::all();
+      return QrcoderResource::collection($info);
     }
 
     public function store(Request $request)
@@ -41,14 +42,14 @@ class TestQrcodeController extends Controller
     public function show($id)
     {
         $code = Qrcodes::findOrFail($id);
-        $paiementcode = $code->id.$code->reference_qrcode;
-        $info=$paiementcode;
-        $info.='; https://testpaiecash.mt-eyer.com/';
-        $info.='si vous lisez ceci c\'est que votre paeiment est éffectué'; 
-        //$qrcode = QrCode::size(200)->generate($info);
+        // $paiementcode = $code->id.$code->reference_qrcode;
+        // $info=$paiementcode;
+        // $info.='; https://testpaiecash.mt-eyer.com/';
+        // $info.='si vous lisez ceci c\'est que votre paeiment est éffectué'; 
+        // //$qrcode = QrCode::size(200)->generate($info);
 
-        //return view("qrcode", compact('info'));
-       return QrcoderResource::collection($info);
+        // //return view("qrcode", compact('info'));
+       return new QrcoderResource($code);
     }
 
     /**

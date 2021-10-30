@@ -17,7 +17,8 @@ class QrcodeController extends Controller
      */
     public function index()
     {
-      
+      $info = Qrcodes::all();
+      return QrcoderResource::collection($info);
     }
 
     /**
@@ -66,8 +67,8 @@ class QrcodeController extends Controller
         $info.='si vous lisez ceci c\'est que votre paeiment est éffectué'; 
         //$qrcode = QrCode::size(200)->generate($info);
 
-        return view("qrcode", compact('info'));
-       // return QrcoderResource::collection($qrcode);
+       // return view("qrcode", compact('info'));
+       return QrcoderResource::collection($info);
     }
 
     /**

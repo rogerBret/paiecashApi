@@ -14,7 +14,7 @@ class Qrcodes extends Model
     protected $filable=['trader_id', 'reference_qrcode'];
 
 
-    public function trader(){
-        return $this->belongTo(Trader::class);
-    }
+    // public function trader(){
+    //     return $this->belongTo(Trader::class);
+    // }
 }
