@@ -22,7 +22,7 @@ class CreatePaiementsTable extends Migration
             $table->foreignId('qrcode_id')->constrained();
             $table->foreign('costomer_account_id')
             ->references('id')
-            ->on('costomer_ccounts')
+            ->on('costomer_accounts')
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->foreign('trader_account_id')

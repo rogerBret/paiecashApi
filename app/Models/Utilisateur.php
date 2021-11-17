@@ -16,4 +16,18 @@ class Utilisateur extends Model
     public function trader(){
         return $this->belongTo(Trader::class);
     }
+
+    public function paiement(){
+
+    }
+
+    public function account(){
+
+    }
+
+     public function ticket(){
+
+     }
+
+      public function orders(){}
 }
